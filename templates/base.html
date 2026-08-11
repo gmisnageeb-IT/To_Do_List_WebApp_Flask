@@ -1,0 +1,20 @@
+<!-- this is the base html file that will be shared between 
+ all html files,  it contains the basic structure of the html file,
+  and the css file link, and the block tags that will be used 
+  to insert the content of the other html files -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- url_for : to locate the css file by flask and put in html file-->
+    <link rel="stylesheet" href={{url_for('static', filename='style.css')}}>
+    {% block head %}{% endblock %}
+
+</head>
+<body>
+    <h1>Nageeb - Flask WebApp</h1>
+    <!-- this is a variable managed by flask to transfere the html code to the proper file shared between all html,  -->
+    {% block body %}{% endblock %} 
+</body>
+</html>

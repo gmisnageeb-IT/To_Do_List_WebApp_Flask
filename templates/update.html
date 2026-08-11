@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Update Task -by Nageeb</title>
+{% endblock %}
+
+{% block body %}
+    <h1>Update Task Screen</h1>
+    <div class="content">
+        <!--when the form submitted by click on submit, the flask send the data in the input text field with post method in the form to the python code at @app.route("/update/<int:id>", methods = ["POST", "GET"]) def update(id:int): function-->
+        <!-- this page uploaded from link in index.html, the link calls this update route with the task's ID-->            
+        <form action="/update/{{ task.id }}" method="POST">
+            <span>Edit Task:</span>
+            <input type="text" name="content" id="content" value="{{ task.content }}" size="80%">
+            <input type="submit" value="Update Task" id="btn_Update" class="Update_btn" >
+        </form>
+    </div>
+{% endblock %} 

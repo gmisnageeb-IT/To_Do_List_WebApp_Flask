@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Tasks smash - by Nageeb</title>
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <h1>To do List - Task Smash 2.0 </h1>
+        <!--every time index.htm loaded, the flask call @app.route("/",methods = ["POST", "GET"]) def index(): to add new task or load all rows(tasks) in db-->
+        <!-- tasks is list of objects hold all tasks (rows) in the database -->
+        {% if tasks | length < 1 %}
+            <h3>There are no tasks to display.... create one here!</h3>
+        {% else %}           
+        
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Added</th>
+                <th>Action</th>
+            </tr>
+            <!-- Loop through each task and create new row to display its information -->
+            {% for task in tasks %}
+            <tr>
+                <td style="width: 60%;">{{ task.content }}</td>
+                <td style="width: 15%;">{{ task.created.strftime("%Y-%m-%d") }}</td>
+                <td style="width: 25%;">
+                    <!--the path(url): /delete/{{task.id}} is a route to tell flask to go back to the python code and implement the function with same route, the delete and update links will be generated dynamically based on the task id, which is passed to the url -->
+                    <a href="/delete/{{task.id}}" class="Del_btn">Delete</a>
+                    
+                    <a href="/update/{{task.id}}" class="Edit_btn">Edit</a> <!-- call update.html in python code using @app.route(/update/id) -->
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+        <!--action hold the path to root url in python code, so when submit is clicked , the flask call @app.rout("/") with function def index(), the flas pass the type of method:Post mean save data in db, :-->
+        <form action="/" method="POST">
+            <input type=" text" name="content" id="content" size="90%">
+            
+            <input type="submit" value="Add Task" id="btn_Add">
+        </form>
+    </div>
+{% endblock %} 
