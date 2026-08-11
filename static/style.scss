@@ -1,0 +1,80 @@
+body{
+    background-color: #d4e4f5;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+table{
+    width: 80%;
+    margin:  auto;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    font-weight: bold;
+}  
+table,th,td{
+    background-color: white;
+    border: 1px solid black;
+} 
+   
+
+th{
+    background-color: #2367c0;
+    color: white;
+}
+th,td{
+      
+    height: 30px;
+}
+input{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 5px;
+    
+}
+#btn_Add{
+    
+    color: white;
+    background-color: #2367c0;
+   
+    
+}
+h1{
+    color: #2367c0;
+    text-align: center;
+}
+span{
+    font-size: 20px;
+    color: #2367c0;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    padding: 5px;
+}
+.Edit_btn , .Del_btn, .Update_btn{
+    display: inline-block;
+    width: 2.4em;
+    padding: 2px 16px;
+    margin: 5px;
+    border-radius: 5px;
+    
+    text-decoration: none;
+    color: #ffffff;
+    transition: background-color 0.3s;
+}
+.Del_btn{
+    background-color: #eb1398;
+}
+.Edit_btn{
+    background-color: #2367c0;
+}   
+.Del_btn:hover{
+    background-color: #920a5e;
+}
+.Edit_btn:hover{
+    background-color: #0a3e92;
+}
+//for update.html
+.Update_btn{
+    width: 10em;
+    background-color: #2367c0;
+}
