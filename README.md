@@ -1,5 +1,5 @@
-To-do list web app - Nageeb app
-----------------------------------
+To-do list web App - using Python and Flask framework
+---------------------------------------------------------
 Published website: https://nageebyrs.pythonanywhere.com/
 
 Instructions to create an environment on VS Code
